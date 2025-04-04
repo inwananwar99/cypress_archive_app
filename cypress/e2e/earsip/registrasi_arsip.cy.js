@@ -125,7 +125,7 @@ boxes.forEach((box)=>{
     })
 
     it('Pengarsipan RC',()=>{
-      cy.save_archive(`${box.context}`)
+      cy.save_archive(`${box.context}`);
     })
     
 })
