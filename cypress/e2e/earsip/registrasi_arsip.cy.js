@@ -14,12 +14,12 @@ describe('Register Arsip Fisik', () => {
   })
 
   const boxes = [
-    { no_box: '140152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock'},
-    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock'},
-    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.03'},
-    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.03'},
-    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)'},
-    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)'}
+    { no_box: '140152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock',type:'fisik',status_type:'inaktif'},
+    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock',type:'fisik',status_type:'inaktif'},
+    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.03',type:'fisik',status_type:'inaktif'},
+    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.03',type:'fisik',status_type:'inaktif'},
+    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)',type:'fisik',status_type:'inaktif'},
+    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)',type:'fisik',status_type:'inaktif'}
   ]
 
 
@@ -37,7 +37,7 @@ boxes.forEach((box)=>{
     let currentCounter = Cypress.env('counter');
     currentCounter++;
     Cypress.env('counter', currentCounter);
-      cy.input_register(box.count,box.no_box,`${box.context+Cypress.env('counter')}`,'fisik','inaktif',box.year,box.classification,`${box.no_arsip+Cypress.env('counter')}`);
+      cy.input_register(box.count,box.no_box,`${box.context+Cypress.env('counter')}`,box.type,box.status_type,box.year,box.classification,`${box.no_arsip+Cypress.env('counter')}`);
       cy.simpan_register_arsip();
       cy.wait(2000);
       // cy.assertion_success();
