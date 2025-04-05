@@ -14,12 +14,12 @@ describe('Register Arsip Fisik', () => {
   })
 
   const boxes = [
-    { no_box: '140152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock',type:'fisik',status_type:'inaktif'},
-    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock',type:'fisik',status_type:'inaktif'},
-    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.03',type:'fisik',status_type:'inaktif'},
-    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.03',type:'fisik',status_type:'inaktif'},
-    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)',type:'fisik',status_type:'inaktif'},
-    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)',type:'fisik',status_type:'inaktif'}
+    { no_box: '140152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk Biasa',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock',type:'fisik',status_type:'inaktif'},
+    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2019",context:'Dokumen SOP Produk Biasa',classification:'LOG.00.02 - Pengelolaan Persediaan/ Stock',type:'fisik',status_type:'inaktif'},
+    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk Terbatas',classification:'REN.01.03',type:'fisik',status_type:'inaktif'},
+    { no_box: '130153',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk Terbatas',classification:'REN.01.03',type:'fisik',status_type:'inaktif'},
+    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk Vital',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)',type:'fisik',status_type:'inaktif'},
+    { no_box: '130152',count:2,no_arsip:'102ARCH',year:"2020",context:'Dokumen BRD Produk Vital',classification:'REN.01.04 - Laporan Tahunan Perusahaan (Annual Report)',type:'fisik',status_type:'inaktif'}
   ]
 
 
@@ -47,7 +47,7 @@ boxes.forEach((box)=>{
       cy.login('uu@earsip.co.id','P@ssw0rd123');
       cy.wait(3000)
       cy.visit('https://web-blue.air.id/dev-earsip/archive-management/confirm/physically-inactive-schedule')
-      cy.wait(3000)
+      cy.wait(5000)
       cy.get('td').contains(`${box.no_box}`).prev().click();
       cy.get('button').contains('Buat Jadwal').click();
       cy.get('button').contains('Jadwalkan').click();

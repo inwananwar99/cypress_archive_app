@@ -301,23 +301,6 @@ Cypress.Commands.add('save_archive',(perihal)=>{
   }) 
 })
 
-// curl 'https://api-red.air.id/api/earsip/rest/registration/detail?registeredArchiveId=0195d70fe6517a9693b50467ddd7b889' \
-//   -H 'accept: application/json, text/plain, */*' \
-//   -H 'accept-language: en-US,en;q=0.9' \
-//   -H 'authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJyY0BlYXJzaXAuY28uaWQiLCJpYXQiOjE3NDI1NDcwMTIsImV4cCI6MTc0NTEzOTAxMn0._RWhf1vo11Y88bnY1FoqEja8M-cod3YNmxYdHZBBBh0QcgnA5fOFB1eXoyRHfK2S' \
-//   -H 'issave: save' \
-//   -H 'origin: https://web-blue.air.id' \
-//   -H 'priority: u=1, i' \
-//   -H 'referer: https://web-blue.air.id/' \
-//   -H 'sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"' \
-//   -H 'sec-ch-ua-mobile: ?0' \
-//   -H 'sec-ch-ua-platform: "Windows"' \
-//   -H 'sec-fetch-dest: empty' \
-//   -H 'sec-fetch-mode: cors' \
-//   -H 'sec-fetch-site: same-site' \
-//   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36'
-
-// https://api-red.air.id/api/earsip/rest/registration/listData?page=0&size=10&filter=
 
 
 
